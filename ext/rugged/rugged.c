@@ -315,7 +315,7 @@ void rugged_exception_raise(void)
 		err_message = error->message;
 	} else {
 		err_klass = rb_eRuntimeError;
-		err_message = "Rugged operation failed";
+		err_message = error->message;//"Rugged operation failed";
 	}
 
 	err_obj = rb_exc_new2(err_klass, err_message);
